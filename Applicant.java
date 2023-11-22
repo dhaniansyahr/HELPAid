@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Applicant extends User {
@@ -6,14 +7,25 @@ public class Applicant extends User {
     private String householdIncome;
 
     List<Document> submits;
+    List<Disbursement> disbursements = new ArrayList<Disbursement>();
 
     public Applicant(String username, String password, String fullname, String email, String mobileNo, String IDno,
-            String address, String householdIncome) {
+            String address, String householdIncome, List<Document> submits) {
         super(username, password, fullname, email, mobileNo);
         this.IDno = IDno;
         this.address = address;
         this.householdIncome = householdIncome;
+        this.submits = submits;
     }
+
+    // public Applicant(String username, String password, String fullname, String
+    // email, String mobileNo, String IDno,
+    // String address, String householdIncome) {
+    // super(username, password, fullname, email, mobileNo);
+    // this.IDno = IDno;
+    // this.address = address;
+    // this.householdIncome = householdIncome;
+    // }
 
     public String getIDno() {
         return IDno;
@@ -55,5 +67,17 @@ public class Applicant extends User {
     public String toString() {
         return "Applicant \naddress = " + address + ",\nhouseholdIncome = " + householdIncome + ",\nIDno = " + IDno
                 + "\n";
+    }
+
+    public List<Disbursement> getDisbursements() {
+        return disbursements;
+    }
+
+    public void setDisbursements(List<Disbursement> disbursements) {
+        this.disbursements = disbursements;
+    }
+
+    public void addDisbursement(Disbursement disbursement) {
+        this.disbursements.add(disbursement);
     }
 }
