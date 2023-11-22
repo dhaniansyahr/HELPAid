@@ -33,3 +33,38 @@ public class Document {
         this.description = description;
     }
 }
+
+/*
+ * Penjelasan Tentang Class Document
+ * 
+ * 1. **Atribut Kelas:**
+ * - `documentID`: Menyimpan ID unik untuk setiap dokumen.
+ * - `fileName`: Menyimpan nama file atau identifier untuk dokumen tersebut.
+ * - `description`: Menyimpan deskripsi atau keterangan yang menjelaskan isi
+ * dari dokumen.
+ * 
+ * 2. **Konstruktor:**
+ * - Konstruktor digunakan untuk membuat objek `Document` dengan memberikan
+ * nilai awal pada atribut-atributnya. Konstruktor ini menerima parameter untuk
+ * menginisialisasi nilai atribut kelas.
+ * 
+ * 3. **Getter:**
+ * - Getter digunakan untuk mendapatkan nilai dari atribut. Dalam hal ini,
+ * terdapat getter untuk mendapatkan ID dokumen, nama file, dan deskripsi
+ * dokumen.
+ * 
+ * 4. **Setter:**
+ * - Setter digunakan untuk mengubah nilai dari atribut. Dalam hal ini, terdapat
+ * setter untuk mengubah ID dokumen, nama file, dan deskripsi dokumen.
+ * 
+ * 5. **Kegunaan:**
+ * - Kelas ini menyediakan representasi untuk informasi spesifik tentang dokumen
+ * yang terkait dengan suatu permohonan bantuan. Dengan menggunakan kelas ini,
+ * Anda dapat melacak dan menyimpan informasi terkait dokumen, seperti ID
+ * dokumen, nama file, dan deskripsi.
+ * 
+ * 6. **Penerapan:**
+ * - Objek `Document` dapat digunakan di berbagai bagian dari sistem bantuan,
+ * seperti ketika mendaftarkan dokumen yang terkait dengan suatu permohonan
+ * bantuan atau ketika menampilkan informasi dokumen kepada pengguna.
+ */

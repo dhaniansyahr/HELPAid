@@ -113,3 +113,50 @@ public class Organization {
         }
     }
 }
+
+/*
+ * Penjelasan Tentang Class Organization
+ * 
+ * 1. **Atribut Kelas:**
+ * - `orgID`: Menyimpan ID unik untuk setiap organisasi.
+ * - `orgName`: Menyimpan nama organisasi.
+ * - `address`: Menyimpan alamat organisasi.
+ * - `employs`: Sebuah `List` yang menyimpan daftar pegawai (representative)
+ * dari organisasi.
+ * - `records`: Sebuah `List` yang menyimpan daftar pendaftar bantuan
+ * (applicants) dari organisasi.
+ * - `appeals`: Sebuah `List` yang menyimpan daftar permohonan bantuan (appeals)
+ * yang diajukan oleh organisasi.
+ * 
+ * 2. **Konstruktor:**
+ * - Terdapat dua konstruktor: satu tanpa parameter dan satu dengan parameter
+ * untuk menginisialisasi nilai atribut organisasi saat pembuatan objek.
+ * 
+ * 3. **Getter dan Setter:**
+ * - Setiap atribut memiliki getter dan setter yang digunakan untuk mendapatkan
+ * dan mengatur nilai atribut.
+ * 
+ * 4. **Metode `addEmploy`, `addRecord`, dan `addAppeal`:**
+ * - Metode ini digunakan untuk menambahkan pegawai, pendaftar bantuan, dan
+ * permohonan bantuan ke dalam list yang sesuai.
+ * 
+ * 5. **Metode `finAppeal` dan `findRecord`:**
+ * - Metode ini mencari permohonan bantuan (appeal) berdasarkan ID permohonan
+ * dan pendaftar bantuan (record) berdasarkan username.
+ * 
+ * 6. **Metode `printAppeals`:**
+ * - Metode ini mencetak informasi tentang setiap permohonan bantuan yang
+ * dimiliki oleh organisasi, termasuk ID permohonan, tanggal mulai, tanggal
+ * berakhir, deskripsi, hasil, dan nama organisasi.
+ * 
+ * 7. **Kegunaan:**
+ * - Kelas ini digunakan untuk menyimpan informasi organisasi, seperti daftar
+ * pegawai, daftar pendaftar bantuan, dan daftar permohonan bantuan.
+ * Metode-metodenya memungkinkan manipulasi data terkait organisasi dan
+ * pendaftar bantuan yang terorganisir.
+ * 
+ * 8. **Penerapan:**
+ * - Objek `Organization` dapat digunakan untuk merepresentasikan organisasi
+ * dalam sistem bantuan yang dirancang untuk mengelola bantuan dan permohonan
+ * bantuan.
+ */

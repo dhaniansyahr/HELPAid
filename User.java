@@ -89,3 +89,40 @@ public class User {
                 + "\nMobile No: " + mobileNo;
     }
 }
+
+/*
+ * Penjelasan Tentang Class Ini
+ * 1. **Atribut Kelas:**
+ * - `username`: Menyimpan nilai nama pengguna (username) pengguna.
+ * - `password`: Menyimpan nilai kata sandi (password) pengguna.
+ * - `fullname`: Menyimpan nama lengkap dari pengguna.
+ * - `email`: Menyimpan alamat email dari pengguna.
+ * - `mobileNo`: Menyimpan nomor telepon seluler dari pengguna.
+ * 
+ * 2. **Konstruktor:**
+ * - Terdapat satu konstruktor dengan parameter yang digunakan untuk
+ * menginisialisasi nilai atribut ketika objek `User` dibuat.
+ * 
+ * 3. **Getter:**
+ * - Terdapat getter untuk masing-masing atribut yang memungkinkan mendapatkan
+ * nilai atribut dari objek `User`.
+ * 
+ * 4. **Setter:**
+ * - Terdapat setter untuk masing-masing atribut yang memungkinkan pengaturan
+ * nilai atribut dari objek `User`.
+ * 
+ * 5. **Metode `toString`:**
+ * - Override metode `toString` yang mengembalikan representasi string dari
+ * objek `User`. Metode ini memberikan tampilan yang mudah dibaca dari informasi
+ * pengguna seperti username, password, fullname, email, dan nomor telepon.
+ * 
+ * 6. **Penerapan:**
+ * - Kelas ini menyediakan basis umum untuk menyimpan informasi dasar tentang
+ * pengguna dalam sistem. Kelas ini bisa diwarisi oleh kelas-kelas lain dalam
+ * konteks sistem manajemen bantuan yang membutuhkan informasi dasar pengguna.
+ * 
+ * 7. **Contoh Penggunaan:**
+ * - Kelas ini bisa digunakan sebagai dasar untuk membuat objek pengguna,
+ * termasuk objek seperti `Applicant` dan `OrganizationRep` yang telah
+ * dijelaskan sebelumnya.
+ */

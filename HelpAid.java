@@ -9,10 +9,12 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class HelpAid {
 
+    // Untuk Membuat Random Number Sepanjang 6 Digit
     public int randomNumber() {
         return (int) (Math.random() * 1000000);
     }
 
+    // Untuk Membuat Random Password
     public String generatePassword() {
         Random random = new Random();
         StringBuilder randomString = new StringBuilder();
@@ -31,6 +33,7 @@ public class HelpAid {
         int lineLength = 50;
         int sideEqualSign = (lineLength - 8) / 2;
 
+        // Untuk Menu
         int chooseMenu, chooseMenuOrgRep;
         String repeatMenu, repeatAdmin, repeatOrganizationRep, repeatViewAppeals;
 
@@ -41,7 +44,6 @@ public class HelpAid {
 
         // Untuk Organization Representative
         String usernameOrgRep, passwordOrgRep, email, fullname, mobileNo, jobTitle;
-        // List<OrganizationRep> employs = new ArrayList<>();
 
         // Untuk Applicant
         String usernameApp, passwordApp, fullnameApp, emailApp, mobileNoApp, IDnoApp, addressApp, householdIncomeApp;
@@ -49,6 +51,7 @@ public class HelpAid {
 
         Scanner input = new Scanner(System.in);
 
+        // Declare Organizations U can Edit This Organizations
         List<Organization> organizations = new ArrayList<>();
         Organization organization = new Organization("ORG" + new HelpAid().randomNumber(), "Organization 1",
                 "Organization 1");
@@ -67,6 +70,8 @@ public class HelpAid {
         organizations.add(organization);
 
         do {
+            // Manu Awal Saat Masuk ke HELPAID
+
             System.out.println();
             System.out.println("=".repeat(lineLength));
             System.out.println(" ".repeat(sideEqualSign) + "HELP AID" + " ".repeat(sideEqualSign));
@@ -84,6 +89,7 @@ public class HelpAid {
             switch (chooseMenu) {
                 case 1:
                     do {
+                        // Untuk Menu Masuk KE dalam Admin
                         System.out.print("\033[H\033[2J");
                         System.out.flush();
                         System.out.print("Masukan Username Admin: ");
@@ -91,6 +97,51 @@ public class HelpAid {
                         System.out.print("Masukan Password Admin: ");
                         passwordAdmin = input.next();
 
+                        // Kondisi untuk cek Apakah username dan Password yang dimasukan itu sama atau
+                        // tidak
+                        /*
+                         * 
+                         * 1. `if (usernameAdmin.equals("admin") && passwordAdmin.equals("admin")) {`:
+                         * - Jika username yang dimasukkan adalah "admin" dan password yang dimasukkan
+                         * juga adalah "admin", maka blok kode di dalam kurung kurawal akan dijalankan.
+                         * 
+                         * 2. Kode di dalam blok if:
+                         * - Menghapus dan membersihkan layar konsol
+                         * (`System.out.print("\033[H\033[2J"); System.out.flush();`).
+                         * - Menampilkan judul "List Of Organization" di tengah layar.
+                         * - Menampilkan daftar organisasi, termasuk ID organisasi, nama organisasi, dan
+                         * alamat organisasi.
+                         * - Meminta input dari pengguna untuk memasukkan ID organisasi yang diinginkan.
+                         * - Mencari organisasi dengan ID yang sesuai dan menyimpannya dalam variabel
+                         * `selectedORG`.
+                         * - Jika organisasi ditemukan, melakukan langkah-langkah berikutnya untuk
+                         * mendaftarkan perwakilan organisasi.
+                         * - Membersihkan layar konsol kembali.
+                         * - Menampilkan judul organisasi yang dipilih.
+                         * - Membuat username perwakilan organisasi dengan format "ORGREP" diikuti oleh
+                         * angka acak.
+                         * - Membuat password perwakilan organisasi dengan menggunakan metode
+                         * `generatePassword` dari kelas `HelpAid`.
+                         * - Meminta input pengguna untuk fullname, email, mobileNo, dan jobTitle
+                         * perwakilan organisasi.
+                         * - Membuat objek `OrganizationRep` berdasarkan input dan menambahkannya ke
+                         * organisasi yang dipilih.
+                         * - Menampilkan pesan "Success Register" jika proses pendaftaran berhasil.
+                         * - Jika organisasi tidak ditemukan, menampilkan pesan
+                         * "No organizations found with the selected ID."
+                         * 
+                         * 3. `System.out.print("Ulangi Menu Admin (Y/N) : "); repeatAdmin =
+                         * input.next();`:
+                         * - Meminta input dari pengguna untuk menentukan apakah ingin mengulangi menu
+                         * admin.
+                         * - Jika jawaban "Y" (case insensitive), program akan kembali ke awal loop
+                         * do-while.
+                         * 
+                         * Dengan demikian, blok kode ini berfungsi untuk memproses akses admin,
+                         * menampilkan daftar organisasi, dan mendaftarkan perwakilan organisasi ke
+                         * dalam organisasi yang dipilih. Program akan terus mengulang menu admin selama
+                         * pengguna memilih untuk melakukannya.
+                         */
                         if (usernameAdmin.equals("admin") && passwordAdmin.equals("admin")) {
                             System.out.print("\033[H\033[2J");
                             System.out.flush();
@@ -167,6 +218,100 @@ public class HelpAid {
 
                 case 2:
                     do {
+                        /*
+                         * Code tersebut adalah bagian dari suatu aplikasi yang menangani
+                         * operasi-administratif untuk perwakilan organisasi. Berikut penjelasan code
+                         * tersebut secara rinci dalam bahasa Indonesia:
+                         * 
+                         * case 2:: Bagian ini menunjukkan bahwa kode yang berikutnya akan dijalankan
+                         * jika pengguna memilih opsi 2 (Organization Representative) dalam menu utama.
+                         * 
+                         * do { ... } while (repeatOrganizationRep.equalsIgnoreCase("Y"));: Ini adalah
+                         * struktur loop do-while yang akan mengeksekusi blok kode di dalamnya
+                         * setidaknya satu kali dan akan terus diulang jika pengguna memilih untuk
+                         * melanjutkan (input "Y").
+                         * 
+                         * Blok kode di dalam do-while:
+                         * System.out.print("\033[H\033[2J"); System.out.flush();: Membersihkan layar
+                         * konsol.
+                         * Meminta input username dan password dari perwakilan organisasi.
+                         * Mencari keberadaan perwakilan organisasi dengan username dan password yang
+                         * dimasukkan dalam daftar organisasi.
+                         * Jika perwakilan organisasi ditemukan:
+                         * Membersihkan layar konsol.
+                         * Menampilkan nama organisasi yang diwakili oleh perwakilan tersebut.
+                         * Menampilkan menu pilihan untuk perwakilan organisasi (menambahkan pelamar,
+                         * menambahkan permohonan bantuan, menambahkan sumbangan, menambahkan pencairan
+                         * bantuan).
+                         * Meminta input pilihan menu dari perwakilan organisasi.
+                         * Berdasarkan pilihan menu, menjalankan berbagai operasi seperti menambahkan
+                         * pelamar, menambahkan permohonan bantuan, menambahkan sumbangan, atau
+                         * menambahkan pencairan bantuan.
+                         * Program juga menangani logika untuk memasukkan dokumen jika perwakilan ingin
+                         * mengirimkan dokumen.
+                         * Jika username atau password tidak valid, menampilkan pesan kesalahan.
+                         * 
+                         * while (repeatOrganizationRep.equalsIgnoreCase("Y"));: Menutup loop do-while
+                         * dan menentukan bahwa loop tersebut akan terus berjalan selama pengguna
+                         * memilih untuk melanjutkan (input "Y").
+                         * 
+                         * Case 1: Add Applicant
+                         * Membersihkan layar konsol.
+                         * Menampilkan header untuk menambahkan pelamar.
+                         * Membuat username aplikasi ("APP" diikuti oleh nomor acak).
+                         * Membuat password aplikasi menggunakan metode generatePassword dari HelpAid.
+                         * Meminta input untuk fullname, email, mobileNo, dan alamat pelamar.
+                         * Membuat ID pelamar menggunakan "AA" diikuti oleh nomor acak.
+                         * Meminta input untuk pendapatan rumah tangga pelamar.
+                         * Jika perwakilan ingin mengirimkan dokumen:
+                         * Membuat objek Applicant dengan dokumen-dokumen yang diupload dan
+                         * menambahkannya ke organisasi.
+                         * Jika tidak mengirimkan dokumen:
+                         * Membuat objek Applicant tanpa dokumen dan menambahkannya ke organisasi.
+                         * Menampilkan pesan sukses.
+                         * 
+                         * Case 2: Add Appeal
+                         * Membersihkan layar konsol.
+                         * Menampilkan header untuk menambahkan permohonan bantuan.
+                         * Meminta input untuk tanggal mulai dan berakhir permohonan.
+                         * Meminta input deskripsi permohonan.
+                         * Membuat objek Appeal dan menambahkannya ke organisasi.
+                         * Menampilkan pesan sukses.
+                         * 
+                         * Case 3: Add Contributions
+                         * Membersihkan layar konsol.
+                         * Menampilkan header untuk menambahkan sumbangan.
+                         * Menampilkan daftar permohonan bantuan yang tersedia.
+                         * Meminta input ID permohonan bantuan yang dipilih.
+                         * Menemukan permohonan bantuan berdasarkan ID.
+                         * Jika permohonan ditemukan:
+                         * Menampilkan rincian permohonan bantuan.
+                         * Meminta input jenis sumbangan (uang tunai atau barang).
+                         * Untuk sumbangan uang tunai:
+                         * Meminta input jumlah uang tunai, saluran pembayaran, dan nomor referensi.
+                         * Membuat objek CashDonation dan menambahkannya ke permohonan bantuan.
+                         * Untuk sumbangan barang:
+                         * Meminta input deskripsi barang dan nilai perkiraan.
+                         * Membuat objek Goods dan menambahkannya ke permohonan bantuan.
+                         * Menampilkan pesan sukses.
+                         * 
+                         * Case 4: Add Disbursement
+                         * Membersihkan layar konsol.
+                         * Menampilkan header untuk menambahkan pencairan bantuan.
+                         * Menampilkan daftar permohonan bantuan yang tersedia.
+                         * Meminta input ID permohonan bantuan yang dipilih.
+                         * Menemukan permohonan bantuan berdasarkan ID.
+                         * Jika permohonan ditemukan:
+                         * Menampilkan rincian permohonan bantuan.
+                         * Meminta input ID pelamar yang akan menerima pencairan.
+                         * Menemukan pelamar berdasarkan ID.
+                         * Jika pelamar ditemukan:
+                         * Menampilkan rincian pelamar.
+                         * Meminta input tanggal pencairan, jumlah uang tunai, dan jumlah barang yang
+                         * dicairkan.
+                         * Membuat objek Disbursement dan menambahkannya ke pelamar.
+                         * Menampilkan pesan sukses.
+                         */
                         System.out.print("\033[H\033[2J");
                         System.out.flush();
                         System.out.print("Masukan Username Representative: ");
@@ -514,6 +659,8 @@ public class HelpAid {
 
                 case 3: // View Appeals
                     do {
+
+                        // Untuk Membersihkan Layar Konsole & menampilkan Header
                         System.out.print("\033[H\033[2J");
                         System.out.flush();
                         System.out.println();
@@ -522,15 +669,15 @@ public class HelpAid {
                         System.out.println("=".repeat(lineLength));
                         System.out.println();
 
+                        // Looping untuk menampilkan Smeua Appeals yang ada
                         for (Organization org : organizations) {
-                            // System.out.println("Appeals for " + org.getOrgName() + ": " +
-                            // org.getAppeals());
                             if (org.getAppeals() != null && org.getAppeals().size() > 0) {
                                 org.printAppeals();
                             }
-                            // org.printAppeals();
                         }
 
+                        // Untuk Mendapatkan Detail Dari Appeals yang akan di lihat Donor dan memasukan
+                        // Appeals ID
                         System.out.println();
                         System.out.print("Enter the Appeal ID to view details: ");
                         String selectedAppealID = input.next();
@@ -538,6 +685,7 @@ public class HelpAid {
                         // Find the selected appeal
                         Appeal selectedAppeal;
 
+                        // Looping Untuk Mendapatkan Appeals
                         for (Organization org : organizations) {
                             selectedAppeal = org.finAppeal(selectedAppealID);
                             if (selectedAppeal != null) {
@@ -546,12 +694,12 @@ public class HelpAid {
                             }
                         }
 
+                        // Menampilkan Detail Dari Appeals dan menampilkan Organisasi Name dan Address
                         if (organizationRepMenuViewAppeal != null) {
                             System.out.println(
                                     "Organization Name: " + organizationRepMenuViewAppeal.getOrgName());
                             System.out.println(
                                     "Organization Address: " + organizationRepMenuViewAppeal.getAddress());
-                            // Any other details you want to display
                         } else {
                             System.out.println("Appeal not found. Please enter a valid Appeal ID.");
                         }
@@ -565,6 +713,7 @@ public class HelpAid {
                     break;
             }
 
+            // Untuk Mengulangi System ini
             System.out.print("Apakah Anda Masih Ingin Berada Didalam HelpAid (Y/N) : ");
             repeatMenu = input.next();
         } while (repeatMenu.equalsIgnoreCase("Y"));

@@ -100,26 +100,6 @@ public class Appeal {
         receives.add(contribution);
     }
 
-    // public void addCashDonation(int amount, String paymentChannel, String
-    // referenceNo) {
-    // // Create CashDonation object
-    // CashDonation cashDonation = new CashDonation(amount, paymentChannel,
-    // referenceNo, new Date(),
-    // "CD" + new HelpAid().randomNumber());
-
-    // // Add contribution to the appeal
-    // addContribution(cashDonation);
-    // }
-
-    // public void addGoods(String description, int estimatedValue) {
-    // // Create Goods object
-    // Goods goods = new Goods(description, estimatedValue, new Date(), "GD" + new
-    // HelpAid().randomNumber());
-
-    // // Add contribution to the appeal
-    // addContribution(goods);
-    // }
-
     // Overloaded method to specifically add CashDonation
     public void addContribution(CashDonation cashDonation) {
         // Ensure contributions list is initialized
@@ -150,3 +130,50 @@ public class Appeal {
     }
 
 }
+
+/*
+ * Penjelasan Tentang Class Appeals
+ * 
+ * Kelas `Appeal` adalah representasi dari suatu permohonan bantuan dalam sistem
+ * yang Anda rancang. Berikut adalah penjelasan detailnya:
+ * 
+ * 1. **Atribut Kelas:**
+ * - `appealID`: Menyimpan ID unik dari suatu permohonan bantuan.
+ * - `formDate`: Menyimpan tanggal mulai permohonan bantuan.
+ * - `toDate`: Menyimpan tanggal berakhirnya permohonan bantuan.
+ * - `description`: Menyimpan deskripsi atau keterangan mengenai permohonan
+ * bantuan.
+ * - `outcome`: Menyimpan hasil atau status dari permohonan bantuan (contoh:
+ * "Pending", "Approved", "Rejected").
+ * - `organization`: Menyimpan referensi ke objek `Organization` yang merupakan
+ * organisasi yang mengajukan permohonan bantuan.
+ * - `receives`: Menyimpan daftar kontribusi (objek `Contribution`) yang
+ * diterima oleh permohonan bantuan.
+ * - `results_in`: Menyimpan daftar pencairan (objek `Disbursement`) yang
+ * dihasilkan oleh permohonan bantuan.
+ * 
+ * 2. **Konstruktor:**
+ * - Konstruktor digunakan untuk membuat objek `Appeal` dengan memberikan nilai
+ * awal pada atribut-atributnya. Konstruktor ini menerima parameter untuk
+ * menginisialisasi nilai atribut kelas.
+ * 
+ * 3. **Getter dan Setter:**
+ * - Getter digunakan untuk mendapatkan nilai dari atribut.
+ * - Setter digunakan untuk mengubah atau mengeset nilai dari atribut.
+ * 
+ * 4. **Metode `addContribution`:**
+ * - Digunakan untuk menambahkan kontribusi (objek `Contribution`) ke dalam
+ * daftar kontribusi (`receives`) pada permohonan bantuan.
+ * - Terdapat tiga metode overload, yaitu `addContribution` untuk kontribusi
+ * umum, `addContribution` untuk menambahkan `CashDonation`, dan
+ * `addContribution` untuk menambahkan `Goods`.
+ * 
+ * 5. **Metode `addDisbursement`:**
+ * - Digunakan untuk menambahkan pencairan (objek `Disbursement`) ke dalam
+ * daftar pencairan (`results_in`) pada permohonan bantuan.
+ * 
+ * Dengan adanya metode-metode tersebut, Anda dapat dengan mudah menambahkan
+ * kontribusi dan pencairan ke dalam suatu permohonan bantuan. Selain itu,
+ * penggunaan list untuk `receives` dan `results_in` memungkinkan adanya lebih
+ * dari satu kontribusi atau pencairan untuk setiap permohonan bantuan.
+ */
